@@ -10,16 +10,22 @@
 
   <body>
     <%#= render 'shared/navbar' %>
-    <nav class="navbar navbar-default navbar-fixed-top react-nav">
-      <%= javascript_pack_tag 'navbar_react'%>
-    </nav>
+        <nav class="navbar navbar-default navbar-fixed-top react-nav">
+          <%= javascript_pack_tag 'navbar_react'%>
+        </nav>
 
-    
+        
 
-  <div id="react-component">
-  	<%= javascript_pack_tag 'application'%>
-  </div>
+      <div id="react-component">
+      	<%= javascript_pack_tag 'application'%>
+      </div>
     <%= yield %>
-      <%= render 'shared/footer' %>
+      <%#= render 'shared/footer' %>
+      <div id="react-footer">
+        <%= javascript_pack_tag 'footer_react'%>
+      </div>
+
+
+
   </body>
 </html>
