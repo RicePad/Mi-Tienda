@@ -10,11 +10,10 @@
 
   <body>
     <%= render 'shared/navbar' %>
-
-  	<div id="react-component">
-  			<%= javascript_pack_tag 'application'%>
-  			
-  	</div>
+  <div id="react-component">
+  	<%= javascript_pack_tag 'application'%>
+  </div>
     <%= yield %>
+      <%= render 'shared/footer' %>
   </body>
 </html>
