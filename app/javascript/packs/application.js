@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../components/App';
+import AppBanner from '../components/AppBanner';
 
 
-const nameComponent = document.getElementById('react-component');
+const nameComponent = document.getElementById('App-banner');
 
 ReactDOM.render(
-	<h1>React World</h1>, nameComponent
+	<AppBanner />, nameComponent
 	);
