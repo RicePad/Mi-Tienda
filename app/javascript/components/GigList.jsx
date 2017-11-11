@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 
 
 class GigList extends Component{
-	
+	constructor(props){
+		super(props);
+
+		this.state = {
+			gigs: []
+		}
+	}
 
 	render(){
 		return(
