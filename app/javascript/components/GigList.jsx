@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 
 class GigList extends Component{
+	
 
 	render(){
 		return(
