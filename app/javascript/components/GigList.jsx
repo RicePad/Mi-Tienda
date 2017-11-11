@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 
 class GigList extends Component{
@@ -8,6 +9,11 @@ class GigList extends Component{
 		this.state = {
 			gigs: []
 		}
+	}
+
+
+	fetchGigs(){
+
 	}
 
 	render(){
