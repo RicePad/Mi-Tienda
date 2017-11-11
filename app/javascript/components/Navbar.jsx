@@ -17,21 +17,17 @@ class Navbar extends Component {
 									<input type="text" className="form-control" placeholder="Busca un servicio.." />
 								</div>
 						</form>
-						<ul className="nav navbar-nav navbar-right">
-							<li className="dropdown">
-
-							</li>
-						</ul>
+						
 						</div>
 					</div>
-					<div id="category">
-						<div className="container">
-						<ul className=" nav navbar-nav">
-							<li><a> Diseno Grafico</a></li>
-							<li><a> Mercadeo Digital</a></li>
-							<li><a> Video/Animacion</a></li>
-							<li><a> Musica & Audio</a></li>
-							<li><a> Programacion & Tech</a></li>
+					<div id="category" style={{backgroundColor: '#fff'}}>
+						<div className="container nav-cat">
+						<ul className="nav navbar-nav">
+							<li><a href="/"> Diseno Grafico</a></li>
+							<li><a href="/"> Mercadeo Digital</a></li>
+							<li><a href="/"> Video/Animacion</a></li>
+							<li><a href="/"> Musica & Audio</a></li>
+							<li><a href="/"> Programacion & Tech</a></li>
 						</ul>
 						</div>
 					</div>
