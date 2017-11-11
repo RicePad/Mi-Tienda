@@ -1,13 +1,11 @@
 class GigsController < ApplicationController
-	def index
-		@gigs = Gig.all
-	end
+	layout 'gig'	
 
-	def new
-		
+	def index
+		@gig_items = Gig.all
 	end
 	
-	def create
-
+	def show
 	end
+
 end
