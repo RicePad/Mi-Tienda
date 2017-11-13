@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import GigItem from '../components/GigItem';
 
 
 class GigList extends Component {
@@ -27,13 +28,11 @@ class GigList extends Component {
 		
 		return(
 			<div>
-				<h1>Gig List</h1>
 				{
 					this.state.gigs.map((gig, index) => {
 						return(
-								<div>
-									<h2 key={index}>{gig.title}</h2>
-								</div>
+								
+								<GigItem gig={gig} key={index} />
 							)
 					})
 				}
