@@ -5,6 +5,7 @@ import GigItem from './GigItem';
 import GigId from './GigId';
 
 
+
 class GigDetail extends Component {
 		constructor(props){
 			super(props);

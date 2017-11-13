@@ -6,6 +6,7 @@ import update from 'immutability-helper';
 
 
 
+
 class GigList extends Component {
 	constructor(props){
 		super(props);
