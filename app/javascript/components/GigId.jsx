@@ -5,16 +5,10 @@ import  avatarImg  from '../assets/avatar.png';
 class GigId extends Component {
 
 	
-
-
-
-
-	render(){
-
+	renderGigInfo = () => {
 		const gig = this.props.gig
-		return(
-				<div className="row">
-							<div className="col-md-8">
+			return(
+				<div className="col-md-8">
 							<div className="panel panel-default">
 								<div className="panel-body">
 									<h3>{gig.title}</h3>
@@ -48,7 +42,19 @@ class GigId extends Component {
 									</li>
 								</ul>
 							</div>
-				</div>
+						</div>
+			)
+
+	}
+
+
+
+	render(){
+
+		const gig = this.props.gig
+		return(
+				<div className="row">
+							{this.renderGigInfo()}
 
 				</div>
 			)

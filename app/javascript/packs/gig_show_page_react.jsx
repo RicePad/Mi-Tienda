@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GigDetail from '../components/GigDetail';
+import GigShowPage from '../components/GigShowPage';
 import { fetchGigs } from '../actions';
 
 // Redux Setup
@@ -18,6 +18,6 @@ store.dispatch(fetchGigs())
 
 ReactDOM.render(
 	<Provider store={store}>
-		<GigDetail />
+		<GigShowPage />
 	</Provider>, componentName
 	);

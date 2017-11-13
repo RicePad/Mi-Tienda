@@ -6,7 +6,7 @@ import GigId from './GigId';
 
 
 
-class GigDetail extends Component {
+class GigShowPage extends Component {
 		constructor(props){
 			super(props);
 
@@ -19,7 +19,7 @@ class GigDetail extends Component {
 
 
 	componentDidMount(){
-		axios.get("http://localhost:5000/api/v1/gigs.json")
+		axios.get(`http://localhost:5000/api/v1/gigs/${1}`)
 			.then(response => {
 				console.log(response)
 				this.setState({ gigs: response.data})
@@ -34,19 +34,7 @@ class GigDetail extends Component {
 		return(
 			<div>
 				<div>
-					{this.state.gigs.map((gig)=> {
-						if(this.state.gigId !== gig.id){
-							return(
-									<GigId gig={gig} key={gig.id} />
-
-								)
-						} else {
-							return (
-
-								<GigItem gig={gig} key={gig.id} />
-						)
-						}
-					})}
+					<GigId gig={this.state.gigs} />
 				</div>
 		  </div>
 			)
@@ -60,4 +48,4 @@ function mapStateToProps(state){
 			grabGigs: state.grabGigs
 	}
 }
-export default connect(mapStateToProps)(GigDetail);
+export default connect(mapStateToProps)(GigShowPage);
