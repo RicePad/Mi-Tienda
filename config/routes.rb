@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'gigs#index'
   resources :gigs
-  root to: 'gigs#index';
-
 
   #REST API Route:
 
