@@ -6,7 +6,7 @@ class GigItem extends Component {
 	render(){
 
 		const gig = this.props.gig
-		console.log("this.props", gig)
+		// console.log("this.props", gig)
 
 		
 		return(
