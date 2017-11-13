@@ -28,8 +28,9 @@ class GigShowPage extends Component {
 			.catch(error => console.log(error))
 	}	
 
+	
+
 	render(){
-		// console.log('this.props from gigdetail', this.props.fetchGigs)
 		console.log('this.state.gigdeail', this.state)
 		return(
 			<div>
