@@ -14,7 +14,7 @@ class GigList extends Component {
 
 
 	componentDidMount(){
-		axios.get("http://localhost:5000/api/v1/gigs.json")
+		axios.get("https://localhost:5000/api/v1/gigs.json")
 			.then(response => {
 				console.log(response)
 				this.setState({ gigs: response.data})
