@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchGigs } from '../actions';
+
 
 class GigDetail extends Component {
 	
 	render(){
-		console.log('this.props from gigdetail', this.props.fetchGigs)
+		// console.log('this.props from gigdetail', this.props.fetchGigs)
+		console.log('this.props', this.props)
 		return(
 			<div>
-				<h1>GigDetail</h1>
+				{this.props.grabGigs.map(gig => {
+					return (
+						<div>{gig.title}</div>
+						)
+				})}
 			</div>
 			)
 	}
@@ -16,10 +21,9 @@ class GigDetail extends Component {
 
 
 function mapStateToProps(state){
- return {
- 	gig: state.fetchGigs
-
- }
+	
+	return{
+			grabGigs: state.grabGigs
+	}
 }
-
-export default connect(mapStateToProps, { fetchGigs })(GigDetail);
+export default connect(mapStateToProps)(GigDetail);

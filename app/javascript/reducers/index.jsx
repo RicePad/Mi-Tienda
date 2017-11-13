@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import fetchGigs from './fetchgigs_reducer.jsx';
+import grabGigs from './fetch_gigs_reducer.jsx';
 
 
 export default combineReducers({
-	fetchGigs
+	grabGigs
 
 })

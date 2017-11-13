@@ -1,25 +1,74 @@
-export const FETCH_GIGS = "FETCH_GIGS";
-import axios from 'axios';
+// export const FETCH_GIGS = "FETCH_GIGS";
+// import axios from 'axios';
+export const RECIEVE_ALL_GIGS = 'RECIEVE_ALL_GIGS';
 
+ function recieveGigs(gigs){
 
- function recieveGigs(gigs) {
-	const action = {
-		type: FETCH_GIGS,
+	
+	return {
+		type: RECIEVE_ALL_GIGS,
 		gigs
+		
 	}
-	return action;
+
+}
+
+function fetchGigsJson(){
+	return fetch('http://localhost:5000/api/v1/gigs.json')
+		.then(response => response.json())
+
 }
 
 
+
 export function fetchGigs(){
-	return(dispatch) => {
-		return axios.get('http://localhost:5000/api/v1/gigs.json')
-		.then(response => {
-			console.log(response)
+	return function(dispatch){
 
-			dispatch(recieveGigs(response.data))
+		return fetchGigsJson()
+			.then(json => dispatch(recieveGigs(json)))
+	}
+}
 
-		})
-		.catch(error => console.log(error))
 
-	}}	
+
+//  function recieveGigs(gigs) {
+// 	const action = {
+// 		type: FETCH_GIGS,
+// 		gigs
+// 	}
+// 	return action;
+// }
+
+
+
+
+// function fetchGigsJson(){
+// 	return fetch('http://localhost:5000/api/v1/gigs.json')
+// 		.then(response => {
+// 			console.log(response)
+// 			response.json()
+// 		})
+// 		.catch(error => console.log(error))
+// }	
+
+
+
+// export function fetchGigs(){
+// 		return function(dispatch){
+// 			return fetchGigsJson()
+// 				.then(json => dispatch(recieveGigs(json)))
+// 		}
+// }
+
+// export function fetchGigs(){
+// 	return(dispatch) => {
+// 		return axios.fetch('http://localhost:5000/api/v1/gigs.json')
+// 		.then(response => {
+// 			console.log(response)
+
+// 			dispatch(recieveGigs(response.data))
+
+// 		})
+// 		.catch(error => console.log(error))
+
+// 	}}	
