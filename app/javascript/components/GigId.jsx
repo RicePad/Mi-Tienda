@@ -6,6 +6,7 @@ class GigId extends Component {
 
 	
 	renderGigInfo() {
+		console.log('this.props', this.props)
 		const gig = this.props.gig
 			return(
 				<div className="col-md-8">

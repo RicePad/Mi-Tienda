@@ -14,14 +14,14 @@ export const RECIEVE_ALL_GIGS = 'RECIEVE_ALL_GIGS';
 }
 
 function fetchGigsJson(){
-	return fetch('http://localhost:5000/api/v1/gigs.json')
+	return fetch(`http://localhost:5000/api/v1/gigs/${1}`)
 		.then(response => response.json())
 
 }
 
 
 
-export function fetchGigs(){
+export function fetchGig(){
 	return function(dispatch){
 
 		return fetchGigsJson()

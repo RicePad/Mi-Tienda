@@ -11,12 +11,20 @@ class GigsController < ApplicationController
 	end
 
 	def new
+	   @gig_item = Gig.new(gig_params)
+
 
 	end
 
-	def show
-
+	def create
+		@gig_item = Gig.new(gig_params)
+		if @gig_item.save 
+			redirect_to root_path, notice: "Your gig has been created"
+		else
+			render :new
+		end
 	end
+
 
 	private
 
