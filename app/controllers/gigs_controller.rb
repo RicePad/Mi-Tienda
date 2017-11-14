@@ -11,7 +11,7 @@ class GigsController < ApplicationController
 	end
 
 	def new
-	   @gig_item = Gig.new(gig_params)
+	   @gig_item = Gig.new
 
 
 	end
