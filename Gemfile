@@ -64,6 +64,9 @@ group  :production do
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'jquery-rails'
 
+#User authentication
+gem 'devise', '~> 4.2'
+
 
 
 
