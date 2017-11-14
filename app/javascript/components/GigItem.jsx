@@ -13,13 +13,13 @@ class GigItem extends Component {
 			
 				<div className="col-md-3">
 					<div>
-						<img src={gig.thumb_image} />
+						<a href="/gigs/1"><img src={gig.thumb_image}/></a>
 					</div>
 					<div className="caption">
 						<p>
-							{gig.description}
-							 <span>by RicePad</span>
-							 <b className="green pull-right">{gig.price}</b>
+							{gig.title}
+							 <span> By RicePad</span>
+							 <b className="green pull-right">${gig.price}</b>
 
 						</p>
 					</div>
