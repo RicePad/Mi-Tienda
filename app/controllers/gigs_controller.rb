@@ -1,5 +1,7 @@
 class GigsController < ApplicationController
+    before_action :authenticate_user!, except: [:index]
 	before_action :set_gig, only: [:show]
+
 	layout 'gig'	
 
 	def index

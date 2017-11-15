@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'home', to: 'homes#index'
 
   #REST API Route:
-
   namespace :api do 
   	namespace :v1 do
   		resources :gigs
