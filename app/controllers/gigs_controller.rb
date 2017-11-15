@@ -13,7 +13,7 @@ class GigsController < ApplicationController
 	end
 
 	def new
-	   @gig_item = current_user.build
+	   @gig_item = Gig.new
 
 
 	end
