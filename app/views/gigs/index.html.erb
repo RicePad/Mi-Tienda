@@ -16,7 +16,7 @@
 		</div>
 		<div class="caption">
 			<p>
-			 <%= gig.description %>
+			 <%= link_to gig.description, gig_path(gig.id) %>
 			 <span>by RicePad</span>
 			 <b class="green pull-right"><%= gig.price %></b>
 

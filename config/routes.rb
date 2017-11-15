@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'gigs#index'
   resources :gigs
   get 'home', to: 'homes#index'
+  get 'gig/:id', to: 'gigs#show', as: 'gig_show'
 
   #REST API Route:
   namespace :api do 
