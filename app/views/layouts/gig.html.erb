@@ -11,15 +11,8 @@
 
   <body>
     <!--ADD AUTHENTICATION FOR LOGIN  --> 
-        <% if current_user.is_a?(User) %>
-           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-        <% else %>
-           <%= link_to "Sign Up", new_user_registration_path %>
-           <%= link_to "Log In", new_user_session_path %>
-        <% end %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    
+     
+     
  
      <!-- <nav class="navbar navbar-default navbar-fixed-top react-nav">
             <%#= javascript_pack_tag 'navbar_react'%>
