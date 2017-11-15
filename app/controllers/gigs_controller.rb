@@ -13,13 +13,13 @@ class GigsController < ApplicationController
 	end
 
 	def new
-	   @gig_item = Gig.new
+	   @gig_item = current_user.build
 
 
 	end
 
 	def create
-		@gig_item = Gig.new(gig_params)
+		@gig_item = current_user.gigs.build(gig_params)
 		if @gig_item.save 
 			redirect_to root_path, notice: "Your gig has been created"
 		else
