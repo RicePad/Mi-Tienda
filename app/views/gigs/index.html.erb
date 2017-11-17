@@ -9,18 +9,5 @@
  -->
 
 
-<% @gig_items.each do |gig| %>
-	<div class="col-md-3">
-		<div class="thumbnail">
-			<%= image_tag gig.thumb_image %>
-		</div>
-		<div class="caption">
-			<p>
-			 <%= link_to gig.description, gig_show_path(gig.id) %>
-			 <span><strong><%= link_to "by RicePad", gig_show_path(gig.id) %></strong></span>
-			 <b class="green pull-right"><%= gig.price %></b>
-
-			</p>
-		</div>
-	</div>
-<% end %>
+<!-- Loop through each gig item form partial -->
+<%= render 'gig_items'%>
