@@ -60,13 +60,19 @@ group  :production do
 
   end
 
-  #Bootstrap Gem
+#Bootstrap Gem
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'jquery-rails'
 
 #User authentication
 gem 'devise', '~> 4.2'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+
+
+#File uploader Integration 
+gem 'mini_magick', '~> 4.8'
+gem 'carrierwave-aws', '~> 1.3'
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 
 
 
