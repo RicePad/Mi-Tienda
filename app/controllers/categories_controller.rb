@@ -5,10 +5,12 @@ class CategoriesController < ApplicationController
 		@categories = Category.all
 	end
 
-	def show 
-	 	@gig_items = Gig.all
+	def show
+		
+		@gig_categories = @category.gigs.paginate(page: params[:page], per_page: 5)
 
 	end
+
 
 	private
 
