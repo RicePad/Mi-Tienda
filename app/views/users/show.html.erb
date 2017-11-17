@@ -13,7 +13,7 @@
 
 
 <h3 class="text-uppercase" style="margin-top:50px;">
-	<b><%= @user.email%></b>
+	<b><%= current_user.first_name if current_user %></b>
 </h3>
 <div class="row">
 	<%= render 'gigs/gig_items'%>
