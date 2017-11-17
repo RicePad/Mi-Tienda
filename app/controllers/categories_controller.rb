@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
 	end
 
 	def show 
-	 	@gig_item = Gig.find(params[:id])
+	 	@gig_items = Gig.all
 
 	end
 
