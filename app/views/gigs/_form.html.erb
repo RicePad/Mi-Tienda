@@ -39,17 +39,17 @@
         	<%= f.text_field :status %>
         	</div>
         </div>
-        <div class="form-group">
-        	<%= f.label :main_image, class: "col-sm-2 control-label" %>
-        	<div class="col-sm-10">
-        	<%= f.text_field :main_image, class: "form-control" %>
-        	</div>
+      
+       <div class="form-group file-button">
+               <label class="btn btn-primary">
+                Upload main image <%= f.file_field :main_image, style: 'display:none' %>
+               </label>
         </div>
-        <div class="form-group">
-        	<%= f.label :thumb_image, class: "col-sm-2 control-label" %>
-        	<div class="col-sm-10">
-        	<%= f.text_field :thumb_image, class: "form-control" %>
-        	</div>
+ 
+         <div class="form-group file-button">
+               <label class="btn btn-primary">
+                Upload thumb image <%= f.file_field :thumb_image, style: 'display:none' %>
+               </label>
         </div>
         <div class="form-group">
         	<div class="col-sm-offset-2 col-sm-10">
