@@ -1,1 +1,16 @@
-<h1>USER PROFILE</h1>
+<h1 style="margin-bottom: 30px; text-align: center;">My Gigs</h1>
+<div class="panel panel-default">
+	<table class="table tabl-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Gig Title</th>
+				<th>Price ($)</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+<!-- 			Loop through every single gig created by user
+ -->			<%= render 'gig_table' %>
+		</tbody>
+	</table>
+</div>
