@@ -1,33 +1,50 @@
 // export const FETCH_GIGS = "FETCH_GIGS";
-// import axios from 'axios';
+import axios from 'axios';
+export const FETCH_GIGS = 'FETCH_GIGS';
 export const RECIEVE_ALL_GIGS = 'RECIEVE_ALL_GIGS';
 
- function recieveGigs(gigs){
+const ROOT_URL= "http://localhost:5000/api/v1/gigs.json"
 
+
+export function fetchGigs(){
+
+	const request= axios.get(`${ROOT_URL}`);
 	
 	return {
-		type: RECIEVE_ALL_GIGS,
-		gigs
+		type: FETCH_GIGS,
+		payload: request
+	}	
+}
+
+
+
+
+//  function recieveGigs(gigs){
+
+	
+// 	return {
+// 		type: RECIEVE_ALL_GIGS,
+// 		gigs
 		
-	}
+// 	}
 
-}
+// }
 
-function fetchGigsJson(){
-	return fetch(`http://localhost:5000/api/v1/gigs/${1}`)
-		.then(response => response.json())
+// function fetchGigsJson(){
+// 	return fetch(`http://localhost:5000/api/v1/gigs/${1}`)
+// 		.then(response => response.json())
 
-}
+// }
 
 
 
-export function fetchGig(){
-	return function(dispatch){
+// export function fetchGig(){
+// 	return function(dispatch){
 
-		return fetchGigsJson()
-			.then(json => dispatch(recieveGigs(json)))
-	}
-}
+// 		return fetchGigsJson()
+// 			.then(json => dispatch(recieveGigs(json)))
+// 	}
+// }
 
 
 
