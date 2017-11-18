@@ -5,7 +5,7 @@ class GigIndex extends Component {
 
 	render(){
 		return(
-			<div>GigInde Component</div>
+			<div>GigIndex Component</div>
 			)
 	}
 }
