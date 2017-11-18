@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Router, Route, browserHistory, Switch } from 'react-router-dom';
 import GigIndex from '../components/GigIndex';
+import GigsNew from '../components/GigsNew';
 
 // Redux Setup
 import { Provider } from 'react-redux';
@@ -15,11 +16,12 @@ const store = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
 <Provider store={store(reducers)}>
-	<BrowserRouter>
-		<Switch>
-			<Route path='/' component={GigIndex} />
+      <BrowserRouter>
+        <Switch>
+       	    <Route path="/gigs/new" component={GigsNew} />
+	        <Route path="/" component={GigIndex} />
 		</Switch>
-	</BrowserRouter>
+	 </BrowserRouter>
  </Provider>,  document.querySelector('.application')
 
 	);

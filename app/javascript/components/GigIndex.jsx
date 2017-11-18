@@ -3,6 +3,10 @@ import { fetchGigs } from '../actions';
 import { connect } from 'react-redux'
 import _ from 'lodash';
 import GigItem from './GigItem';
+import GigsNew from './GigsNew';
+import { Link } from 'react-router-dom';
+
+
 
 class GigIndex extends Component {
 
@@ -13,9 +17,10 @@ class GigIndex extends Component {
 	
 
 	render(){
-		// console.log(this.props.gigs)
+		console.log(this.props.gigs)
 		return(
 			<div>
+
 				<h1>GigIndex List</h1>
 				
 			{ /********************** Render GigItem Component *********************** */ }
@@ -27,6 +32,12 @@ class GigIndex extends Component {
 							)
 					})
 				}
+
+				<div>
+					<Link to={'gigs/new'}>
+						<button class="btn btn-success">Submit a Gig </button>
+					</Link>
+				</div>
 			</div>
 			)
 	}
