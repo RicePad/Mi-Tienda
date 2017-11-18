@@ -6,11 +6,12 @@
 		<div class="caption">
 			<p>
 			 <%= link_to gig.description, gig_show_path(gig.id) %>
+			
 			 <% if gig.categories.any? %>
         			 <p><%= render gig.categories %></p>
        		<% end %>
 			 <span><strong><%= link_to "by RicePad", gig_show_path(gig.id) %></strong></span>
-			 <b class="green pull-right"><%= gig.price %></b>
+			 <b class="green pull-right"> $<%= gig.price %></b>
 
 			</p>
 			 
