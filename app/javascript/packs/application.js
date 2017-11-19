@@ -19,7 +19,8 @@ ReactDOM.render(
       <BrowserRouter>
         <Switch>
        	    <Route path="/gigs/new" component={GigsNew} />
-	        <Route path="/" component={GigIndex} />
+	        <Route path="/gigs" component={GigIndex} />
+			<Route path="/" component={GigIndex} />
 		</Switch>
 	 </BrowserRouter>
  </Provider>,  document.querySelector('.application')
