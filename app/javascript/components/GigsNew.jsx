@@ -15,6 +15,7 @@ class GigsNew extends Component{
 					className="form-control"
 					{...field.input}
 				/>	
+				{field.meta.error}
 			</div>
 
 			)
@@ -50,6 +51,7 @@ class GigsNew extends Component{
 				 	name="thumb_image"
 				 	component={this.renderField}
 				 />	
+
 			</form>
 			)
 	}
