@@ -21,6 +21,20 @@ class GigsNew extends Component{
 			)
 	}
 
+	renderIntegerField(field){
+		return(
+			<div className="form-group">
+					<label>{field.label}</label>
+				
+				<input
+					type="number"
+					{ ...field.input }
+				/>
+					{field.meta.error}
+		    </div>
+			)
+	}
+
 
 	onSubmit(values){
 		console.log(values)
@@ -46,6 +60,16 @@ class GigsNew extends Component{
 					name="description"
 					component={this.renderField}
 				 />
+				  <Field
+				 	label="Price"
+					name="price"
+					component={this.renderIntegerField}
+				 />
+				  <Field
+				 	label="Status"
+					name="status"
+					component={this.renderIntegerField}
+				 />
 				 <Field
 				 	label="Main Image"
 				 	name="main_image"
@@ -56,6 +80,8 @@ class GigsNew extends Component{
 				 	name="thumb_image"
 				 	component={this.renderField}
 				 />	
+
+				 <button type="submit" className="btn btn-success">Submit</button>
 
 			</form>
 			)
@@ -75,8 +101,14 @@ function validate(values){
 	if(!values.description){
 		errors.description = "Enter a description";
 	}
+	if(!values.price){
+		errors.price = "Enter a Price";
+	}
+	if(!values.status){
+		errors.status = "Enter a Status";
+	}
 	if(!values.main_image){
-		errors.image = "Enter a image";
+		errors.main_image = "Enter a image";
 	}
 	if(!values.thumb_image){
 		errors.thumb_image = "Enter a thumb image";
