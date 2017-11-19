@@ -42,12 +42,12 @@ class GigsNew extends Component{
 				 />
 				 <Field
 				 	label="Main Image"
-				 	name="image"
+				 	name="main_image"
 				 	component={this.renderField}
 				 />
 				 <Field
 				 	label="Thumb Image"
-				 	name="thumbimage"
+				 	name="thumb_image"
 				 	component={this.renderField}
 				 />	
 			</form>
@@ -55,7 +55,31 @@ class GigsNew extends Component{
 	}
 }
 
+function validate(values){
+	
+	const errors = {};
+
+	if(!values.title){
+		errors.title = "Enter a title";
+	}
+	if(!values.categories){
+		errors.categories = "Enter a category";
+	}
+	if(!values.description){
+		errors.description = "Enter a description";
+	}
+	if(!values.main_image){
+		errors.image = "Enter a image";
+	}
+	if(!values.thumb_image){
+		errors.thumb_image = "Enter a thumb image";
+	}
+
+
+	return errors;
+}
 
 export default reduxForm({
+	validate,
 	form: 'GigsNewForm'
 })(GigsNew);
