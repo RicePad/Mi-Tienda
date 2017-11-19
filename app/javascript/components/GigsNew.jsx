@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Field, reduxForm } from 'redux-form';
+
 
 class GigsNew extends Component{
 	render(){
@@ -10,4 +12,6 @@ class GigsNew extends Component{
 }
 
 
-export default GigsNew;
+export default reduxForm({
+	form: 'GigsNewForm'
+})(GigsNew);
