@@ -4,18 +4,22 @@ import { Field, reduxForm } from 'redux-form';
 
 
 class GigsNew extends Component{
-	
 
 	renderField(field){
+		const { meta: { touched, error } } = field;
+		const className= `form-group ${touched && error ? 'text-danger' : ''}`;
+		
 		return(	
-			<div className="form-group">
-			<label>{field.label}</label>
+			<div className={className}>
+				<label>{field.label}</label>
 				<input
 					type="text"
 					className="form-control"
 					{...field.input}
 				/>	
-				{field.meta.touched ? field.meta.error : ''}
+				<div className="text-danger">
+				{touched ? error : ''}
+				</div>
 			</div>
 
 			)
@@ -82,6 +86,8 @@ class GigsNew extends Component{
 				 />	
 
 				 <button type="submit" className="btn btn-success">Submit</button>
+				 {" "}
+				 <Link to={'/gigs'}><button type="submit" className="btn btn-danger">Cancel</button></Link>
 
 			</form>
 			)
