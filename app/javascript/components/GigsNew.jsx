@@ -43,14 +43,15 @@ class GigsNew extends Component{
 
 
 	onSubmit(values){
-		this.props.createGig(values);
+        this.props.createGig(values)
+		console.log(values)
 	}
 
 
 	render(){
-		const { handleSubmit } = this.props;
+        const { handleSubmit } = this.props;
 		return(
-			<form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+           <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 				<Field
 					label="Title of Gig"
 					name="title"
@@ -127,7 +128,8 @@ function validate(values){
 }
 
 export default reduxForm({
-	validate,
-	form: 'GigsNewForm'
+    validate: validate,
+    form: 'GigsNewForm'
+    
 })(
-	connect(null, { createGig })(GigsNew));
+    connect(null, { createGig })(GigsNew));
