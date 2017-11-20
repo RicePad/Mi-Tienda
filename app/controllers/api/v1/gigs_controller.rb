@@ -1,5 +1,5 @@
 class Api::V1::GigsController < ApplicationController
-	# before_action :authenticate_user!, except: [:index, :show]
+	 before_action :authenticate_user!, except: [:index, :show]
 
 	skip_before_action :verify_authenticity_token
 
