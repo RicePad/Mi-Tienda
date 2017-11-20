@@ -1,6 +1,7 @@
 // export const FETCH_GIGS = "FETCH_GIGS";
 import axios from 'axios';
 export const FETCH_GIGS = 'FETCH_GIGS';
+export const CREATE_GIG = 'CREATE_GIG';
 export const RECIEVE_ALL_GIGS = 'RECIEVE_ALL_GIGS';
 
 const ROOT_URL= "http://localhost:5000/api/v1/gigs.json"
@@ -14,6 +15,16 @@ export function fetchGigs(){
 		type: FETCH_GIGS,
 		payload: request
 	}	
+}
+
+export function createGig(values){
+	const request = axios.post(`${ROOT_URL}`, values);
+
+	return {
+		type: CREATE_GIG,
+		payload: request
+	}
+
 }
 
 

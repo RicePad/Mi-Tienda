@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { createGig } from '../actions'
 
 
 class GigsNew extends Component{
@@ -41,7 +43,7 @@ class GigsNew extends Component{
 
 
 	onSubmit(values){
-		console.log(values)
+		this.props.createGig(values);
 	}
 
 
@@ -127,4 +129,5 @@ function validate(values){
 export default reduxForm({
 	validate,
 	form: 'GigsNewForm'
-})(GigsNew);
+})(
+	connect(null, { createGig })(GigsNew));

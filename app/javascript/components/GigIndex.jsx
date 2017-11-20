@@ -35,7 +35,7 @@ class GigIndex extends Component {
 
 				<div>
 					<Link to={'gigs/new'}>
-						<button class="btn btn-success">Submit a Gig </button>
+						<button className="btn btn-success">Submit a Gig </button>
 					</Link>
 				</div>
 			</div>
