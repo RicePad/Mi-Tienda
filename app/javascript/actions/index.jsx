@@ -27,8 +27,9 @@ export function fetchGigs(){
 
 // }
 
-export function createGig(values){
+export function createGig(values, callback){
     const request = axios.post(`${ROOT_URL}`, values) 
+    	.then(() => callback());
      
      return {
          type: CREATE_GIG,

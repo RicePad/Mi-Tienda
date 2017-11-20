@@ -43,7 +43,9 @@ class GigsNew extends Component{
 
 
 	onSubmit(values){
-        this.props.createGig(values)
+        this.props.createGig(values, () => {
+        	this.props.history.push('/');
+        })
 		console.log(values)
 	}
 
