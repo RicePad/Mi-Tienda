@@ -1,7 +1,7 @@
 <% @gig_items.each do |gig| %>
 	<div class="col-md-3">
 		<div class="thumbnail">
-			<%= link_to (image_tag (gig.thumb_image)), gig_show_path(gig.id)  %>
+			<%= link_to (image_tag (gig.thumb_image)), gig_show_path(gig.id)   %>
 		</div>
 		<div class="caption">
 			<p> <%= link_to gig.description, gig_show_path(gig.id) %></p>

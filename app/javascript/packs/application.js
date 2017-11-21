@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Router, Route, browserHistory, Switch } from 'react-router-dom';
 import GigIndex from '../components/GigIndex';
 import GigsNew from '../components/GigsNew';
+import GigShow from '../components/GigShow';
 
 // Redux Setup
 import { Provider } from 'react-redux';
@@ -19,7 +20,8 @@ ReactDOM.render(
       <BrowserRouter>
         <Switch>
        	    <Route path="/gigs/new" component={GigsNew} />
-	        <Route path="/gigs" component={GigIndex} />
+       	    <Route path='/gigs/:id' component={GigShow} />
+			<Route path="/gigs" component={GigIndex} />
 			<Route path="/" component={GigIndex} />
 		</Switch>
 	 </BrowserRouter>
