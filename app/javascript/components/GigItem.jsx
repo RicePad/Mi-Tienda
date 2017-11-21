@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 
 class GigItem extends Component {
@@ -12,15 +13,15 @@ class GigItem extends Component {
 			
 				<div className="col-md-2">
 					<div>
-						<a href="/gigs/1"><img src={gig.thumb_image}/></a>
+						<Link to={`gigs/${gig.id}`}><img src={gig.thumb_image}/></Link>
 					</div>
 					<div className="caption">
-						<p>
+						<Link to={`gigs/${gig.id}`}><p>
 							{gig.title}
 							 <span> By RicePad</span>
 							 <b className="green pull-right">${gig.price}</b>
 
-						</p>
+						</p></Link>
 					</div>
 				</div>
 			
