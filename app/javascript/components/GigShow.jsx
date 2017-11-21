@@ -25,7 +25,7 @@ class GigShow extends Component {
 		return(
 			<div>
 				<GigShowPage gig={gig} />
-				}
+				
 			</div>
 			)}
 

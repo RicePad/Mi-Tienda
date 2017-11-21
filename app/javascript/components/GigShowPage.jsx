@@ -6,12 +6,12 @@ import React, { Component } from 'react';
 
 class GigShowPage extends Component {
 		
+	renderGigInfo(){
+			const gig  = this.props.gig;
 
-	render(){
-		const gig = this.props.gig
 		return(
-			<div className="row">
-						<div className="col-md-8">
+			<div>
+				<div className="col-md-8">
 							<div className="panel panel-default">
 								<div className="panel-body">
 									<h3>{gig.title}</h3>
@@ -46,7 +46,15 @@ class GigShowPage extends Component {
 								</ul>
 							</div>
 						</div>
-						<div className="col-md-4">
+			</div>
+			)
+	}
+
+
+	renderUserInfo(){
+		const gig = this.props.gig;
+		return(
+				<div className="col-md-4">}	
 							<div className="panel panel-default">
 								<div className="panel-body">
 									<button type="button" className="btn btn-success btn-block">
@@ -56,14 +64,24 @@ class GigShowPage extends Component {
 							</div>
 							<div className="panel panel-default">
 								<div className="panel-body">
-									<img src={ gig.thumb_image } style={{height: 100}}/>
+									<img src={ gig.thumb_image } style={{height: 100}} />
 									<h4 className="text-center"> RicePad</h4>
 									<hr />
 									<p>I have 3 years of experience in Python/Django and ReactJS. I'm a cool guy! Haha</p>
 								</div>
 							</div>
-	</div>
+						</div>
 
+			)
+	}
+
+	render(){
+
+		return(
+			<div className="row">
+						{this.renderGigInfo()}
+						{this.renderUserInfo()}
+						
 		   </div>
 			)
 	}
