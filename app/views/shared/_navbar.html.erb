@@ -10,9 +10,15 @@
 				</div>
 		 </form>
 		
-		<div style="text-align: right;">
-      		<%= login_helper %>
-     	</div>
+		<div style="text-align: right; color: white;">
+			<% if(user_signed_in?) %>		
+				 <%= image_tag avatar_url(current_user), class: "img-circle", style: "width:40px" %>&nbsp;
+              	 <%= current_user.name %> <span class="caret"></span>
+
+			<% end %>
+			<%= login_helper %>
+			
+		</div>
 	
 		</div>
 	</div>
