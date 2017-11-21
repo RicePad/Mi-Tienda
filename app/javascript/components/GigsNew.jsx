@@ -28,15 +28,21 @@ class GigsNew extends Component{
 	}
 
 	renderIntegerField(field){
+	  const { meta: { touched, error } } = field;
+
+	  const className= `form-group ${touched && error ? 'text-danger' : ''}`;
+
 		return(
-			<div className="form-group">
+			<div className={className}>
 					<label>{field.label}</label>
 				
 				<input
 					type="number"
 					{ ...field.input }
 				/>
-					{field.meta.error}
+					<div className="text-danger">
+						{touched ? error : ''}
+				   </div>
 		    </div>
 			)
 	}
