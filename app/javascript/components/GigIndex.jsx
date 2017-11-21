@@ -5,6 +5,7 @@ import _ from 'lodash';
 import GigItem from './GigItem';
 import GigsNew from './GigsNew';
 import { Link } from 'react-router-dom';
+import AppBanner from './AppBanner';
 
 
 
@@ -21,7 +22,7 @@ class GigIndex extends Component {
 		return(
 			<div>
 
-				<h1>GigIndex List</h1>
+				<AppBanner />
 				
 			{ /********************** Render GigItem Component *********************** */ }
  
