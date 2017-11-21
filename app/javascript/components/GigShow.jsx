@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchGig } from '../actions';
+import GigShowPage from './GigShowPage'
 
 class GigShow extends Component {
 
+
 	componentDidMount(){
-		const id = this.props.match.params
+		const { id }  = this.props.match.params
 		this.props.fetchGig(id)
 	}
 
+
 	render(){
+		const { gig } = this.props
+
+
+		if (!gig) {
+			return <div>Loading.....</div>
+		}
+		console.log('this.props.gig', this.props.gig)
+
+
 		return(
-			<h1>GigShow Component</h1>
+			<div>
+				<GigShowPage gig={gig} />
+				}
+			</div>
 			)}
 
 

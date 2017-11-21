@@ -1,50 +1,17 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import axios from 'axios'
-import GigItem from './GigItem';
-import GigId from './GigId';
-import {fetchGig} from '../actions'
-import  avatarImg  from '../assets/avatar.png';
 
 
-//************ ACCESSED THIS COMPONENT USING REDUX STORE TO PASS PROPS************
+//************ ACCESS THIS COMPONENT USING REDUX STORE TO PASS PROPS************
 
 
 class GigShowPage extends Component {
-		constructor(props){
-			super(props);
-
-			this.state = {
-				gigs: [],
-				gigId: null
-			}
-		}
-
-
-
-	componentDidMount(){
-		// axios.get(`http://localhost:5000/api/v1/gigs/${1}`)
-		// 	.then(response => {
-		// 		console.log(response)
-		// 		this.setState({ gigs: response.data})
-		// 	})
-
-		// 	.catch(error => console.log(error))
-
-
-		//************ ACCESSED THIS COMPONENT USING REDUX STORE TO PASS PROPS************
-
-		this.props.fetchGig
-	}	
-
-	
+		
 
 	render(){
-		console.log('this.props.grabGigs', this.props.grabGigs)
-		const gig = this.props.grabGig
+		const gig = this.props.gig
 		return(
 			<div className="row">
-				<div className="col-md-8">
+						<div className="col-md-8">
 							<div className="panel panel-default">
 								<div className="panel-body">
 									<h3>{gig.title}</h3>
@@ -68,7 +35,7 @@ class GigShowPage extends Component {
 									<li className="list-group-item">
 										<div className="row">
 											<div className="col-md-2">
-												<img src={ avatarImg } style={{height: 60}}/>
+												<img href={ gig.thumb_image } style={{height: 60}}/>
 											</div>
 											<div className="col-md-10">
 												<h5>RicePad Customer</h5>
@@ -89,7 +56,7 @@ class GigShowPage extends Component {
 							</div>
 							<div className="panel panel-default">
 								<div className="panel-body">
-									<img src={ avatarImg } style={{height: 100}}/>
+									<img src={ gig.thumb_image } style={{height: 100}}/>
 									<h4 className="text-center"> RicePad</h4>
 									<hr />
 									<p>I have 3 years of experience in Python/Django and ReactJS. I'm a cool guy! Haha</p>
@@ -103,10 +70,5 @@ class GigShowPage extends Component {
 }
 
 
-function mapStateToProps(state){
-	
-	return{
-			grabGig: state.grabGig
-	}
-}
-export default connect(mapStateToProps, { fetchGig })(GigShowPage);
+
+export default (GigShowPage);
