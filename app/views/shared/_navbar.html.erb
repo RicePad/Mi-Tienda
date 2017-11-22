@@ -11,12 +11,27 @@
 		 </form>
 		
 		<div style="text-align: right; color: white;">
-			<% if(user_signed_in?) %>		
-				 <%= image_tag avatar_url(current_user), class: "img-circle", style: "width:40px" %>&nbsp;
-              	 <%= current_user.name %> <span class="caret"></span>
+			<ul class="dropdown">
+			 	 <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">
 
-			<% end %>
-			<%= login_helper %>
+					<% if(user_signed_in?) %>		
+					<%= image_tag avatar_url(current_user), class: "img-circle", style: "width:40px" %>&nbsp;
+		            <%= current_user.name %> <span class="caret"></span>
+	             <ul class="dropdown-menu profile-links">
+	              <li><%= link_to "Your Listings", root_path %></li>
+	              <li><%= link_to "Your Listings", root_path %></li>
+	              <li><%= link_to "Your Listings", root_path %></li>
+	              <li><%= link_to "Your Listings", root_path %></li>
+	              <li><%= link_to "Your Listings", root_path %></li>
+	              <li><%= link_to "Your Listings", root_path %></li>
+	              <li><%= link_to "Your Listings", root_path %></li>
+	            </ul>
+	             </a>
+	            
+
+					<% end %>
+				<%= login_helper %>
+			</ul>
 			
 		</div>
 	
