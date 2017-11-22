@@ -22,7 +22,6 @@ class GigIndex extends Component {
 		return(
 			<div>
 
-				<AppBanner />
 				
 			{ /********************** Render GigItem Component *********************** */ }
  

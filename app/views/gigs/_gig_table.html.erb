@@ -1,0 +1,9 @@
+<% @gig_items.each do |gig| %>
+	<tr>
+   		<td><%= link_to gig.title, gig_show_path(gig.id) %></td>   
+   		<td><%= gig.price %></td>  
+   		<td><%= gig.status %></td>     
+    </tr>
+<% end %>
+
+

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :gigs
   get 'home', to: 'homes#index'
   get 'gig/:id', to: 'gigs#show', as: 'gig_show'
+  get '/your_gigs_profile' => 'gigs#your_gigs_profile'
+
 
   #REST API Route:
   namespace :api do 

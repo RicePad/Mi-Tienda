@@ -1,6 +1,6 @@
 
 <div class="jumbotron text-center">
-	<h1><b><%= @user.email %></b></h1>
+	<h1><b><%= @user.name + "'s shop" %></b></h1>
 </div>
 <div class="panel panel-default">
 	<div class="panel-body">
@@ -22,7 +22,7 @@
 
 <!-- MY GIG LST -->
 
- <h1 style="margin-bottom: 30px; text-align: center;">My Gigs</h1>
+ <!-- <h1 style="margin-bottom: 30px; text-align: center;">My Gigs</h1>
 <div class="panel panel-default">
 	<table class="table tabl-bordered table-striped">
 		<thead>
@@ -32,11 +32,11 @@
 				<th>Status</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody> -->
 <!-- 			Loop through every single gig created by user
  -->			<%= render 'gig_table' %>
-		</tbody>
+		<!-- </tbody>
 	</table>
 </div>
-
+ -->
 <!-- END OF MY GIG LST -->

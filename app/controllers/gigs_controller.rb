@@ -41,6 +41,11 @@ class GigsController < ApplicationController
 		end
 	end
 
+	def your_gigs_profile
+		@user = current_user
+		@gig_items = current_user.gigs
+	end
+
 
 	private
 
