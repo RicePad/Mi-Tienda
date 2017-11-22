@@ -33,7 +33,7 @@ class GigsController < ApplicationController
 
 	def update
 		if @gig_item.update(gig_params)
-			redirect_to user_path
+			redirect_to gig_show_path
 			flash[:notice] = "Gig successfully updated"
 
 		else

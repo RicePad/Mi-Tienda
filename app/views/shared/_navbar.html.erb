@@ -14,11 +14,11 @@
 			<ul class="dropdown">
 			 	 <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">
 
-					<% if(user_signed_in?) %>		
+					<% if current_user.is_a?(User) %>		
 					<%= image_tag avatar_url(current_user), class: "img-circle", style: "width:40px" %>&nbsp;
 		            <%= current_user.name %> <span class="caret"></span>
 	             <ul class="dropdown-menu profile-links">
-	              <li><%= link_to "Your Listings", root_path %></li>
+	              <li><%= link_to "Your Gigs", root_path %></li>
 	              <li><%= link_to "Your Listings", root_path %></li>
 	              <li><%= link_to "Your Listings", root_path %></li>
 	              <li><%= link_to "Your Listings", root_path %></li>

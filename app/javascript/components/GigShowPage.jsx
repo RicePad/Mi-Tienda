@@ -5,6 +5,9 @@ import React, { Component } from 'react';
 
 
 class GigShowPage extends Component {
+
+
+
 		
 	renderGigInfo(){
 			const gig  = this.props.gig
@@ -58,7 +61,11 @@ class GigShowPage extends Component {
 							<div className="panel panel-default">
 								<div className="panel-body">
 									<button type="button" className="btn btn-success btn-block">
-										Una Orden
+									  Order
+									</button>
+									{ " " }
+									<button onClick={this.props.clickDeleteGig} className="btn btn-danger btn-block"> 
+										Delete Gig 
 									</button>
 								</div>
 							</div>

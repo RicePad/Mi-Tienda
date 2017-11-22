@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { fetchGig } from '../actions';
+import { fetchGig, deleteGig } from '../actions';
 import GigShowPage from './GigShowPage'
+import { Link } from 'react-router-dom';
 
 class GigShow extends Component {
 
@@ -9,6 +10,16 @@ class GigShow extends Component {
 	componentDidMount(){
 		const { id }  = this.props.match.params
 		this.props.fetchGig(id)
+	}
+
+	
+	clickDeleteGig() {
+		console.log("click click click")
+		const { id } = this.props.match.params
+		this.props.deleteGig(id, () => {
+        this.props.history.push('/gigs');
+        
+      })
 	}
 
 
@@ -24,7 +35,7 @@ class GigShow extends Component {
 
 		return(
 			<div>
-				<GigShowPage gig={gig} />
+				<GigShowPage gig={gig} clickDeleteGig={this.clickDeleteGig.bind(this)} />
 				
 			</div>
 			)}
@@ -40,4 +51,4 @@ function mapStateToProps({ gigs }, ownProps){
 	}
 }
 
-export default connect(mapStateToProps, { fetchGig })(GigShow);
+export default connect(mapStateToProps, { fetchGig, deleteGig })(GigShow);

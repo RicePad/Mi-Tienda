@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :gigs
-  validates_presence_of :name
+
 
   def set_defaults
 		self.profile_image ||= "http://via.placeholder.com/350x200"
