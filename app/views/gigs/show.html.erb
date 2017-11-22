@@ -1,9 +1,5 @@
-<!-- <div class="gig-detail">
-           <%= javascript_pack_tag 'gig_show_page_react'%>
 
- </div>
- -->
-<!-- <div class="row">
+<div class="row">
 	<div class="col-md-8">
 		<div class="panel panel-default">
 			<div class="panel-body">
@@ -18,6 +14,10 @@
 			</div>
 			<div class="panel-body">
 				<p><%= @gig_item.title %></p>
+				<% if current_user.is_a?(User) %> 
+					<%= link_to 'Edit Gig', edit_gig_path, class: "btn btn-success" %>
+				<% end %>
+
 			</div>
 		</div>
 		<div class="panel panel-default">
@@ -59,4 +59,4 @@
 			</div>
 		</div>
 	</div>
-</div> -->
+</div>

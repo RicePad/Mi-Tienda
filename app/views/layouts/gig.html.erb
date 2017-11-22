@@ -17,9 +17,12 @@
      
 
      <%= render 'shared/navbar' %>
+      <div id="App-banner"> 
+        <%= javascript_pack_tag 'app_banner'%>
+    </div>
    <%= yield %>
       <div class="application"> 
-        <%= javascript_pack_tag 'application'%>
+        <%#= javascript_pack_tag 'application'%>
     </div>
       
     <%#= render 'shared/footer' %>
