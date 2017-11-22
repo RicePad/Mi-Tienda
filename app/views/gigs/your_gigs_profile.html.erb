@@ -4,8 +4,7 @@
 </div>
 <div class="panel panel-default">
 	<div class="panel-body">
-		<%= image_tag @user.profile_image unless @user.profile_image.nil? %>
-		<h3 class="text-uppercase">About Me </h3>
+		<h3 class="text-uppercase"> <%= image_tag avatar_url(current_user), class: "img-circle", style: "width:40px" %>&nbsp; About Me </h3>
 		<hr/>
 		<p><%= @user.about %></p>
 	</div>
