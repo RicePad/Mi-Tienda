@@ -3,7 +3,7 @@ class Gig < ApplicationRecord
 	has_many :gig_categories
 	has_many :categories, through: :gig_categories
 	after_initialize :set_defaults
-	validates_presence_of :thumb_image, :main_image
+	validates_presence_of :title, :description, :status, :thumb_image, :main_image
 
     # Uncomment when deploying to production
 	

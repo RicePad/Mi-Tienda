@@ -1,6 +1,6 @@
 class GigsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
-	before_action :set_gig, only: [:show]
+	before_action :set_gig, only: [:show, :edit, :update]
 
 	layout 'gig'	
 
@@ -24,6 +24,20 @@ class GigsController < ApplicationController
 			redirect_to root_path, notice: "Your gig has been created"
 		else
 			render :new
+		end
+	end
+
+	def edit
+
+	end
+
+	def update
+		if @gig_item.update(gig_params)
+			redirect_to user_path
+			flash[:notice] = "Gig successfully updated"
+
+		else
+			render :edit
 		end
 	end
 
