@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :gigs
+  has_many :purchases
+  has_many :gigs, through: :purchases
 
 
   def set_defaults

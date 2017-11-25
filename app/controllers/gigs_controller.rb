@@ -9,7 +9,7 @@ class GigsController < ApplicationController
 	end
 	
 	def show
-		
+		@client_token = Braintree::ClientToken.generate		
 	end
 
 	def new
@@ -44,6 +44,20 @@ class GigsController < ApplicationController
 	def your_gigs_profile
 		@user = current_user
 		@gig_items = current_user.gigs
+	end
+
+	def checkout
+
+		nonce = params[:payment_method_nonce]
+		    result = Braintree::Transaction.sale(
+		    :amount => "15.00", #could be any other arbitrary amount captured in params[:amount] if they weren't all $10.
+		    :payment_method_nonce => nonce,
+		    :options => {
+		      :submit_for_settlement => true
+		      }
+		    )
+
+		    flash[:notice] = "Success! Time, like Nonces, is precious. Use it well." if result.success?
 	end
 
 
