@@ -1,17 +1,16 @@
 
-      <% if current_user.is_a?(User) %>
-        <%= form_tag checkout_path do %>
+      <% if user_signed_in? && current_user.is_a?(User) %>
+          <%= form_tag checkout_path do %>
             <div id="payment-form"></div>
              <input type="hidden" id="amount" name="amount" type="tel" value="<%= @gig_item.price %>">
             
             <button class="btn-success btn-block" type="submit">Order  $<%= @gig_item.price %></button>
-
-
-        <% end %>
+         <% end %>
+      <% else %>
+          <%= link_to "Hire", new_user_registration_path, class: "btn btn-success btn-block" %>
       <% end %>
 
 
-            <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
           <script>
               var clientToken = "<%= @client_token %>";
               braintree.setup(clientToken, "dropin", {
