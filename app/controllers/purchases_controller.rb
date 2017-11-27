@@ -2,6 +2,10 @@ class PurchasesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_gig, only: [:show]
 
+	
+	def index
+	end
+	
 	def show
 	end
 
@@ -31,10 +35,10 @@ class PurchasesController < ApplicationController
 	    )
 
 	   	if result.success? 
-   	   		redirect_to root_path, notice: "You have successfully checked out"
+   	   		redirect_to your_purchases_path, notice: "You have successfully checked out"
    	   	else
    	   		flash[:alert] = "Something went wrong while processing your transaction"
-   
+
    	   	end
 	end
 
