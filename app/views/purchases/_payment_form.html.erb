@@ -1,0 +1,27 @@
+
+      <% if current_user.is_a?(User) %>
+        <%= form_for([@gig_item, @gig_item.purchases.new]) do |f| %>
+            <div id="payment-form"></div>
+            <input type="submit" value="Order now <%= @gig_item.price %>" class="btn btn-success btn-block">
+        <% end %>
+      <% end %>
+
+
+            <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+          <script>
+              var clientToken = "<%= @client_token %>";
+              braintree.setup(clientToken, "dropin", {
+                container: "payment-form",
+                paypal: {
+                  singleUse: true,
+                  amount: "<%= @gig_item.price %>",
+                  currency: 'USD',
+                  locale: 'en_us'
+                },
+                dataCollector: {
+                  paypal: true  // Enables fraud prevention
+                }
+              });
+          </script>
+
+
