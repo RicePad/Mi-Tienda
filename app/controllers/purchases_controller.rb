@@ -8,7 +8,6 @@ class PurchasesController < ApplicationController
 	
 	def checkout
 
-		@purchase = current_user.purchase.create(purchase_params)
 
 		
 	    nonce = params["payment_method_nonce"]
