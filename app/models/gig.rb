@@ -18,4 +18,5 @@ class Gig < ApplicationRecord
 	end
 
 	
+	
 end

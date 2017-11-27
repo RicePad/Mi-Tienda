@@ -2,7 +2,11 @@
       <% if current_user.is_a?(User) %>
         <%= form_tag checkout_path do %>
             <div id="payment-form"></div>
-            <input type="submit" value="Order now <%= @gig_item.price %>" class="btn btn-success btn-block">
+             <input type="hidden" id="amount" name="amount" type="tel" value="<%= @gig_item.price %>">
+            
+            <button class="btn-success btn-block" type="submit">Order  $<%= @gig_item.price %></button>
+
+
         <% end %>
       <% end %>
 
