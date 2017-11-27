@@ -1,6 +1,6 @@
 
       <% if current_user.is_a?(User) %>
-        <%= form_for([@gig_item, @gig_item.purchases.new]) do |f| %>
+        <%= form_tag checkout_path do %>
             <div id="payment-form"></div>
             <input type="submit" value="Order now <%= @gig_item.price %>" class="btn btn-success btn-block">
         <% end %>

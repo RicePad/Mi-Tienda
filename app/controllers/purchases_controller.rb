@@ -38,7 +38,7 @@ class PurchasesController < ApplicationController
 	    end
 
 	    def purchase_params 
-	    	params.require(:reservation).permit(:gig_id, :price)
+	    	params.require(:purchase).permit(:gig_id, :price)
 		end
 
 end
