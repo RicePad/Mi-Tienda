@@ -1,4 +1,4 @@
 class Purchase < ApplicationRecord
-belongs_to :users
-belongs_to :gigs
+belongs_to :user
+belongs_to :gig
 end

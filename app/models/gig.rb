@@ -3,7 +3,6 @@ class Gig < ApplicationRecord
 	has_many :gig_categories
 	has_many :categories, through: :gig_categories
 	has_many :purchases
-	has_many :users, through: :purchases
 	after_initialize :set_defaults
 	validates_presence_of :title, :description, :status, :thumb_image, :main_image
 

@@ -35,6 +35,14 @@ class PurchasesController < ApplicationController
 	    )
 
 	   	if result.success? 
+	   		# gig_item = Gig.find(params[:id])
+	   		# gig_item = gig.id
+	   		
+	   		# user = Gig.find(params[:id])
+	   		# user = user.id
+	   		
+	   		@purchase = Purchase.create(purchase_params)
+
    	   		redirect_to your_purchases_path, notice: "You have successfully checked out"
    	   	else
    	   		flash[:alert] = "Something went wrong while processing your transaction"
@@ -45,7 +53,7 @@ class PurchasesController < ApplicationController
 
 		
 	def your_purchases
-
+		@purchases = Purchase.all
 	end
 
 
@@ -56,7 +64,7 @@ class PurchasesController < ApplicationController
 	    end
 
 	    def purchase_params 
-	    	params.require(:purchase).permit(:gig_id, :price)
+	    	params.require(:purchase).permit(:gig_id, :user_id)
 		end
 
 end

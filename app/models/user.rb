@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :gigs
   has_many :purchases
-  has_many :gigs, through: :purchases
 
 
   def set_defaults
@@ -22,9 +21,7 @@ class User < ApplicationRecord
    end
   
 
-   def gig_item_price
-      total_purchase = "50.00"
-   end
+   
    
 
 end
