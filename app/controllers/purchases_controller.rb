@@ -1,16 +1,13 @@
 class PurchasesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_gig, only: [:show]
-
-	
-	def index
-	end
 	
 	def show
+
 	end
 
-	
 	def checkout
+
 	    amount = params["amount"] 
 
 		nonce = params["payment_method_nonce"]
@@ -26,32 +23,24 @@ class PurchasesController < ApplicationController
 		      customer = result.customer
 		      current_user.update(braintree_id: customer.id)
     end
-
-		
-
-	   	 result = Braintree::Transaction.sale(
+	 	 result = Braintree::Transaction.sale(
 	      amount: amount,
 	      payment_method_nonce: nonce
 	    )
 
 	   	if result.success? 
-	   		# gig_item = Gig.find(params[:id])
-	   		# gig_item = gig.id
-	   		
-	   		# user = Gig.find(params[:id])
-	   		# user = user.id
-	   		
-	   		@purchase = Purchase.create(purchase_params)
 
+			@purchase = current_user.purchases.create(gig_id: params[:gig_id])
+			
+
+	   		
    	   		redirect_to your_purchases_path, notice: "You have successfully checked out"
    	   	else
    	   		flash[:alert] = "Something went wrong while processing your transaction"
-
+   	   		redirect_to root_path
    	   	end
 	end
 
-
-		
 	def your_purchases
 		@purchases = Purchase.all
 	end
@@ -61,6 +50,7 @@ class PurchasesController < ApplicationController
 
 		def set_gig
 		   @gig_item = Gig.find(params[:id])
+
 	    end
 
 	    def purchase_params 
