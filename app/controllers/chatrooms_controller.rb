@@ -1,4 +1,5 @@
 class ChatroomsController < ApplicationController
+	before_action :authenticate_user!
 	before_action :set_chatroom, only: [:show]
 
 	def index
@@ -11,7 +12,7 @@ class ChatroomsController < ApplicationController
 	def new
 		@chatroom = Chatroom.new
 	end
-	
+
 
 	def create
 		@chatroom = Chatroom.create(chatroom_params)
