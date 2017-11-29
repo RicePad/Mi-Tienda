@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get '/your_purchases' => 'purchases#your_purchases'
   post 'checkout', to: 'purchases#checkout'
 
-  resources :chatrooms
+  resources :chatrooms do 
+        resource :chatroom_users
+  end
 
   #REST API Route:
   namespace :api do 
