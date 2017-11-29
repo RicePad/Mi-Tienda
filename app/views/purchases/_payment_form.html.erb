@@ -1,0 +1,30 @@
+
+      <% if user_signed_in? && current_user.is_a?(User) %>
+          <%= form_tag checkout_path do %>
+            <div id="payment-form"></div>
+              <input type="hidden" id="gig_id" name="gig_id" type="tel" value="<%= @gig_item.id %>">
+              <input type="hidden" id="amount" name="amount" type="tel" value="<%= @gig_item.price %>">
+             <button class="btn-success btn-block" type="submit">Order  $<%= @gig_item.price %></button>
+         <% end %>
+      <% else %>
+          <%= link_to "Hire", new_user_registration_path, class: "btn btn-success btn-block" %>
+      <% end %>
+
+
+          <script>
+              var clientToken = "<%= @client_token %>";
+              braintree.setup(clientToken, "dropin", {
+                container: "payment-form",
+                paypal: {
+                  singleUse: true,
+                  amount: "<%= @gig_item.price %>",
+                  currency: 'USD',
+                  locale: 'en_us'
+                },
+                dataCollector: {
+                  paypal: true  // Enables fraud prevention
+                }
+              });
+          </script>
+
+

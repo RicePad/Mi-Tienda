@@ -6,9 +6,7 @@ class CategoriesController < ApplicationController
 	end
 
 	def show
-		
 		@gig_categories = @category.gigs.paginate(page: params[:page], per_page: 5)
-
 	end
 
 

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'home', to: 'homes#index'
   get 'gig/:id', to: 'gigs#show', as: 'gig_show'
   get '/your_gigs_profile' => 'gigs#your_gigs_profile'
+  get '/your_purchases' => 'purchases#your_purchases'
+  post 'checkout', to: 'purchases#checkout'
 
 
   #REST API Route:

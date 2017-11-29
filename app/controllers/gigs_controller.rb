@@ -9,13 +9,11 @@ class GigsController < ApplicationController
 	end
 	
 	def show
-		
+		@client_token = Braintree::ClientToken.generate		
 	end
 
 	def new
 	   @gig_item = Gig.new
-
-
 	end
 
 	def create
@@ -28,7 +26,6 @@ class GigsController < ApplicationController
 	end
 
 	def edit
-
 	end
 
 	def update
@@ -45,6 +42,8 @@ class GigsController < ApplicationController
 		@user = current_user
 		@gig_items = current_user.gigs
 	end
+
+
 
 
 	private

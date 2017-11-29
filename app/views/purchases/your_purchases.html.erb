@@ -1,0 +1,30 @@
+<%= flash[:notice] %>
+
+<h1 style="margin-bottom: 30px; text-align: center;">My Purchases</h1>
+<div class="panel panel-default">
+	<table class="table table-bordered table-striped">
+		<thead class="bg-success">
+			<tr>
+				<th>Gig Title</th>
+				<th>Description</th>
+				<th>Price $</th>
+				<th>Status</th>
+			</tr>	
+		</thead>
+		<tbod>
+				<% @purchases.each do |purchase|%>
+					<tr>
+						<td><%= link_to purchase.gig.title, gig_show_path(purchase.gig) %></td>
+						<td><%= link_to purchase.gig.description, gig_show_path(purchase.gig)  %></td>
+						<td><%= link_to purchase.gig.price, gig_show_path(purchase.gig) %></td>
+						<td><%= link_to purchase.gig.status, gig_show_path(purchase.gig)  %></td>
+				    </tr>
+			    <% end %>
+
+		</tbod>
+	</table>
+</div>
+
+
+
+

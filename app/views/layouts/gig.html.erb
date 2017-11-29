@@ -4,16 +4,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Mi Tienda </title>
     <%= csrf_meta_tags %>
-  
     <%= stylesheet_link_tag 'gigs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
   </head>
 
   <body>
+    <%= flash[:notice] %>
     <!--ADD AUTHENTICATION FOR LOGIN  --> 
      <!-- <nav class="navbar navbar-default navbar-fixed-top react-nav">
             <%#= javascript_pack_tag 'navbar_react'%>
-     </nav> -->
+     </nav> --> 
+
      
 
      <%= render 'shared/navbar' %>

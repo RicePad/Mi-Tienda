@@ -75,6 +75,14 @@ gem 'carrierwave-aws', '~> 1.3'
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 
 
+#Payment integration
+gem 'braintree', '~> 2.80'
+gem "figaro"
+gem 'gon', '~> 5.1.2'
+
+
+
+
 
   
 
