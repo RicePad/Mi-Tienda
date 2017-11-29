@@ -10,13 +10,16 @@
 		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h4><%= @gig_item.description %></h4>
+				<h4>
+					<%= @gig_item.description %>
+					<% if current_user.is_a?(User) %> 
+						<%= link_to 'Edit Gig', edit_gig_path, class: "btn btn-success" %>
+				<% end %>
+				</h4>
 			</div>
 			<div class="panel-body">
 				<p><%= @gig_item.title %></p>
-				<% if current_user.is_a?(User) %> 
-					<%= link_to 'Edit Gig', edit_gig_path, class: "btn btn-success" %>
-				<% end %>
+				
 
 			</div>
 		</div>

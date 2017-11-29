@@ -2,7 +2,7 @@
 	<div class="navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
-				<%= link_to (image_tag 'logo.png',  height: 50), root_path %>
+				<%= link_to (image_tag 'logo.png', style: "height: 50px;"), root_path %>
 			</div>
 			<form class="navbar-form navbar-left" role="search">
 				<div class="form-group">
@@ -46,3 +46,6 @@
 		</div>
 	</div>
 </nav>
+<div id="App-banner"> 
+        <%= javascript_pack_tag 'app_banner'%>
+ </div>

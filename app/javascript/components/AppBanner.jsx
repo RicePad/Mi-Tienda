@@ -3,6 +3,7 @@ import bannerImg from '../assets/banner.gif';
 
 
 class AppBanner extends Component {
+	
 
 	render(){
 		return(
