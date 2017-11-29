@@ -18,11 +18,11 @@ class PurchasesController < ApplicationController
     	else
       		result = Braintree::Customer.create(
 		        email: current_user.email,
-		        payment_method_nonce: params[:payment_method_nonce]
+       		    payment_method_nonce: params[:payment_method_nonce]
 		      )
 
 		      customer = result.customer
-		      current_user.update(braintree_id: customer.id)
+      		  current_user.update(braintree_id: customer.id)
     end
 	 	 result = Braintree::Transaction.sale(
 	      amount: amount,
