@@ -1,22 +1,30 @@
 <%= flash[:notice] %>
 
-<%= @purchases.inspect %>
 <h1 style="margin-bottom: 30px; text-align: center;">My Purchases</h1>
 <div class="panel panel-default">
 	<table class="table table-bordered table-striped">
 		<thead class="bg-success">
 			<tr>
 				<th>Gig Title</th>
+				<th>Description</th>
 				<th>Price $</th>
 				<th>Status</th>
 			</tr>	
 		</thead>
 		<tbod>
-			<tr>
-				<td>gig.title</td>
-				<td>gig.price</td>
-				<td>gig.status</td>
-		    </tr>
+			<% @purchases.each do |purchase|%>
+				<tr>
+					<td><%= link_to purchase.gig.title, root_path %></td>
+					<td><%= link_to purchase.gig.description, root_path  %></td>
+					<td><%= link_to purchase.gig.price, root_path  %></td>
+					<td><%= link_to purchase.gig.status, root_path  %></td>
+			    </tr>
+		    <% end %>
+
 		</tbod>
 	</table>
 </div>
+
+
+
+

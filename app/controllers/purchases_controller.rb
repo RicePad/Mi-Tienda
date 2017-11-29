@@ -3,6 +3,7 @@ class PurchasesController < ApplicationController
 	before_action :set_gig, only: [:show]
 	
 	def show
+		@purchase = current_user.purchases
 
 	end
 
@@ -42,7 +43,7 @@ class PurchasesController < ApplicationController
 	end
 
 	def your_purchases
-		@purchases = Purchase.all
+		@purchases = current_user.purchases
 	end
 
 
