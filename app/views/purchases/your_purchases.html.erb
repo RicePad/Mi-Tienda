@@ -12,14 +12,14 @@
 			</tr>	
 		</thead>
 		<tbod>
-			<% @purchases.each do |purchase|%>
-				<tr>
-					<td><%= link_to purchase.gig.title, root_path %></td>
-					<td><%= link_to purchase.gig.description, root_path  %></td>
-					<td><%= link_to purchase.gig.price, root_path  %></td>
-					<td><%= link_to purchase.gig.status, root_path  %></td>
-			    </tr>
-		    <% end %>
+				<% @purchases.each do |purchase|%>
+					<tr>
+						<td><%= link_to purchase.gig.title, gig_show_path(purchase.gig) %></td>
+						<td><%= link_to purchase.gig.description, gig_show_path(purchase.gig)  %></td>
+						<td><%= link_to purchase.gig.price, gig_show_path(purchase.gig) %></td>
+						<td><%= link_to purchase.gig.status, gig_show_path(purchase.gig)  %></td>
+				    </tr>
+			    <% end %>
 
 		</tbod>
 	</table>
