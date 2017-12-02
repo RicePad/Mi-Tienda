@@ -7,6 +7,8 @@ class ChatroomsController < ApplicationController
 	end
 
 	def show
+		@messages = @chatroom.messages.order(created_at: :desc).limit(100).reverse
+
 	end
 
 	 def new

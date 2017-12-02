@@ -16,4 +16,11 @@ puts '5 gigs have been created!'
 	category = Category.create(name: 'Technologia')
 end
 
-puts '3 categories have been created'
+puts '3 categories have been created!'
+
+
+10.times do |message|
+	Message.create!(user_id: "1", chatroom_id: "1", body: 'Hello World, How you doing?')
+end
+
+puts '10 messages have been created!'
