@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :chatrooms do 
         resource :chatroom_users
         resources :messages
-  end
+    end
 
   #REST API Route:
   namespace :api do 

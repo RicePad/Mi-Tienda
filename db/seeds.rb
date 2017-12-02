@@ -19,6 +19,10 @@ end
 puts '3 categories have been created!'
 
 
+3.times do |chatroom|
+	Chatroom.create!(name: "Let's talk")
+end
+
 10.times do |message|
 	Message.create!(user_id: "1", chatroom_id: "1", body: 'Hello World, How you doing?')
 end
