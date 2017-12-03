@@ -19,8 +19,8 @@ end
 puts '3 categories have been created!'
 
 
-3.times do |chatroom|
-	Chatroom.create!(name: "Let's talk")
+20.times do |chatroom|
+	Chatroom.create!(name: "FreelancerRoom")
 end
 
 10.times do |message|

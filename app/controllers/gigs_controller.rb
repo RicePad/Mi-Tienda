@@ -14,6 +14,7 @@ class GigsController < ApplicationController
 
 	def new
 	   @gig_item = Gig.new
+	   
 	end
 
 	def create
