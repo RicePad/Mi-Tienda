@@ -9,16 +9,26 @@ class GigsController < ApplicationController
 	end
 	
 	def show
-		@client_token = Braintree::ClientToken.generate		
+		@client_token = Braintree::ClientToken.generate	
+		# @chatrooms = Chatroom.all
+		@chatroom = Chatroom.find(params[:id])
+
+
+		@messages = @chatroom.messages.order(created_at: :desc).limit(100).reverse
+
+
 	end
 
 	def new
 	   @gig_item = Gig.new
-	   
+	   @chatroom = Chatroom.new
+
+
 	end
 
 	def create
 		@gig_item = current_user.gigs.build(gig_params)
+		@chatroom = Chatroom.new
 		if @gig_item.save 
 			redirect_to root_path, notice: "Your gig has been created"
 		else
@@ -51,10 +61,15 @@ class GigsController < ApplicationController
 
 		def set_gig
 			@gig_item = Gig.find(params[:id])
+
 		end
 
 		def gig_params
 			 params.require(:gig).permit(:title, :category, :description, :price, :main_image, :thumb_image, :status, category_ids: [])
+		end
+
+		def chatroom_params
+			params.require(:chatroom).permit(:name)
 		end
 
 end

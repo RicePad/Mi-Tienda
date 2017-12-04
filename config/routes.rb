@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit]
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'registration'}
   root to: 'gigs#index'
-  resources :gigs
+  
+  resources :gigs do 
+        resource :chatroom_users
+        resources :messages
+  end
+
   get 'home', to: 'homes#index'
   get 'gig/:id', to: 'gigs#show', as: 'gig_show'
   get '/your_gigs_profile' => 'gigs#your_gigs_profile'

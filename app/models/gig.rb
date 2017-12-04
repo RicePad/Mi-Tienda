@@ -3,6 +3,8 @@ class Gig < ApplicationRecord
 	has_many :gig_categories
 	has_many :categories, through: :gig_categories
 	has_many :purchases
+	has_many :chatroom_users
+    has_many :chatrooms, through: :chatroom_users
 	after_initialize :set_defaults
 	validates_presence_of :title, :description, :status, :thumb_image, :main_image
 
