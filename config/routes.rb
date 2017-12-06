@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get '/your_purchases' => 'purchases#your_purchases'
   post 'checkout', to: 'purchases#checkout'
 
+  mount ActionCable.server => '/cable'
+
+
+
   resources :chatrooms do 
         resource :chatroom_users
         resources :messages
