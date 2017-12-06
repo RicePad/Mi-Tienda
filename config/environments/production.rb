@@ -91,5 +91,4 @@ Rails.application.configure do
   config.action_cable.allowed_request_origins = ['https://mii-tienda.herokuapp.com/',
                                                  'https://mii-tienda.herokuapp.com/']
 
-  config.action_cable.url = "wss://mii-tienda.herokuapp.com/cable"
 end
