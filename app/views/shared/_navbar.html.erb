@@ -5,10 +5,10 @@
 				<%= link_to (image_tag 'logo.png', style: "height: 50px;"), root_path %>
 			</div>
 			<form class="navbar-form navbar-left" role="search">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Busca un servicio.." />
+				<div class="form-group search-bar">
+					      <%= javascript_pack_tag 'search_bar'%>
 				</div>
-		 </form>
+			</form>
 		
 		<div style="text-align: right; color: white;">
 			<ul class="dropdown">

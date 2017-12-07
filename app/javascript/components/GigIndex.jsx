@@ -6,6 +6,7 @@ import GigItem from './GigItem';
 import GigsNew from './GigsNew';
 import { Link } from 'react-router-dom';
 import AppBanner from './AppBanner';
+import Navbar from './Navbar';
 
 
 
@@ -20,25 +21,27 @@ class GigIndex extends Component {
 	render(){
 		console.log(this.props.gigs)
 		return(
-			<div>
+			<div> 
+				<Navbar />
+					<div>
+					
+				{ /********************** Render GigItem Component *********************** */ }
+	 
+	 				{
+						_.map(this.props.gigs, gig => {
+							return(
+									<GigItem gig={gig} key={gig.id} />
+								)
+						})
+					}
 
-				
-			{ /********************** Render GigItem Component *********************** */ }
- 
- 				{
-					_.map(this.props.gigs, gig => {
-						return(
-								<GigItem gig={gig} key={gig.id} />
-							)
-					})
-				}
-
-				<div>
-					<Link to={'gigs/new'}>
-						<button className="btn btn-success">Submit a Gig </button>
-					</Link>
+					<div>
+						<Link to={'gigs/new'}>
+							<button className="btn btn-success">Submit a Gig </button>
+						</Link>
+					</div>
 				</div>
-			</div>
+		</div>
 			)
 	}
 	         /********************** End of GigItem Component *********************** */ 

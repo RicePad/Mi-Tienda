@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../assets/logo.png';
+import SearchBar from './SearchBar';
 
 
 class Navbar extends Component {
@@ -14,7 +15,7 @@ class Navbar extends Component {
 							</div>
 							<form className="navbar-form navbar-left" role="search">
 								<div className="form-group">
-									<input type="text" className="form-control" placeholder="Busca un servicio.." />
+									<SearchBar />
 								</div>
 						</form>
 						
@@ -23,11 +24,12 @@ class Navbar extends Component {
 					<div id="category" style={{backgroundColor: '#fff'}}>
 						<div className="container nav-cat">
 						<ul className="nav navbar-nav">
-							<li><a href="/"> Diseno Grafico</a></li>
-							<li><a href="/"> Mercadeo Digital</a></li>
-							<li><a href="/"> Video/Animacion</a></li>
-							<li><a href="/"> Musica & Audio</a></li>
-							<li><a href="/"> Programacion & Tech</a></li>
+							<li><a href="https://worktify.herokuapp.com//gigs">Home</a> </li>
+							<li><a href="https://worktify.herokuapp.com/categories/1">Technology</a> </li>
+							<li><a href="https://worktify.herokuapp.com/categories/3">Graphic Design</a> </li>
+							<li><a href="https://worktify.herokuapp.com/categories/3">Writing & Blogs</a> </li>
+							<li><a href="https://worktify.herokuapp.com/categories/4">Video/Animation</a> </li>
+							<li><a href="https://worktify.herokuapp.com/categories/5">Music & Audio</a> </li>
 						</ul>
 						</div>
 					</div>
