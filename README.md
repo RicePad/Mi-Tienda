@@ -2,5 +2,5 @@
 
 On Going Demo: 
 
-https://mii-tienda.herokuapp.com/
+https://worktify.herokuapp.com/
 * ...
