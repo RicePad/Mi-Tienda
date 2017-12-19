@@ -88,6 +88,5 @@ gem 'redis', '~> 3.3', '>= 3.3.1'
 gem "font-awesome-rails"
 
 
-
   
 
